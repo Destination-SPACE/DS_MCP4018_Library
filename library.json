@@ -1,6 +1,6 @@
 {
     "name": "DS MCP4018 Library",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Arduino library for the MCP4018T-103E I2C digital potentiometer",
     "keywords": "mcp4018, digital potentiometer, potentiometer, digipot",
     "repository":
