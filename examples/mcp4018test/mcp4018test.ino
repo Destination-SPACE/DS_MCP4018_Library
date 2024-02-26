@@ -34,7 +34,11 @@ void setup(){
   Serial.begin(115200);
   while(!Serial);
   Serial.print("MCP4018 test");
-  MCP4018.begin()
+  if(!MCP4018.begin()){
+    while(true){
+      delay(10);
+    }
+  }
 }
 
 void loop(){

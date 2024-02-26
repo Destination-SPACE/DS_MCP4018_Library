@@ -3,7 +3,7 @@
 #include "DS_MCP4018.h"
 
 
-MCP4018::MCP4018(void){}
+MCP4018::MCP4018(){}
 
 bool MCP4018::begin()
 {
@@ -89,10 +89,10 @@ int MCP4018::getWiperPercent()
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(MCP_READ);
     Wire.endTransmission();
-    Wire.reqestFrom(MCP_ADDRESS, 1);
+    Wire.requestFrom(MCP_ADDRESS, 1);
     uint8_t value = Wire.read();
     int resistance = MAX_RESISTANCE * value / 127 + WIPER_RESISTANCE;
-    int percent = resistance / MAX_RESISTANCE * 100
+    int percent = resistance / MAX_RESISTANCE * 100;
 
     return percent;
 }
@@ -102,7 +102,7 @@ int MCP4018::getWiperResistance()
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(MCP_READ);
     Wire.endTransmission();
-    Wire.reqestFrom(MCP_ADDRESS, 1);
+    Wire.requestFrom(MCP_ADDRESS, 1);
     uint8_t value = Wire.read();
     int resistance = MAX_RESISTANCE * value / 127 + WIPER_RESISTANCE;
 
@@ -114,7 +114,7 @@ uint8_t MCP4018::getWiperByte()
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(MCP_READ);
     Wire.endTransmission();
-    Wire.reqestFrom(MCP_ADDRESS, 1);
+    Wire.requestFrom(MCP_ADDRESS, 1);
     uint8_t value = Wire.read();
     
     return value;
