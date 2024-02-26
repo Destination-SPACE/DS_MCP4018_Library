@@ -1,0 +1,39 @@
+##############################################
+# Syntax Coloring Map for DS MCP4018 Library #
+##############################################
+# Class
+
+################################################################################
+
+MCP4018 KEYWORD1
+
+################################################################################
+# Methods and Functions
+################################################################################
+
+begin   KEYWORD2
+reset   KEYWORD2
+
+setWiperPercent     KEYWORD2
+setWiperResistance  KEYWORD2
+setWiperByte        KEYWORD2
+setWiperZero        KEYWORD2
+setWiperMax         KEYWORD2
+
+getWiperPerent      KEYWORD2
+getWiperResistance  KEYWORD2
+getWiperByte        KEYWORD2
+
+################################################################################
+# Constants
+################################################################################
+
+MCP_ADDRESS     LITERAL1
+MCP_WRITE       LITERAL1
+MCP_READ        LITERAL1
+
+STEP_NUMBER     LITERAL1
+DEFAULT_STEP    LITERAL1
+
+WIPER_RESISTANCE    LITERAL1
+MAX_RESISTANCE      LITERAL1
