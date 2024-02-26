@@ -42,6 +42,7 @@ void setup(){
       delay(10);
     }
   }
+  Serial.print("\n");
 }
 
 void loop(){

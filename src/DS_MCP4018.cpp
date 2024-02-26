@@ -17,10 +17,10 @@ bool MCP4018::begin()
         Wire.write(MCP_WRITE);
         Wire.write(DEFAULT_STEP);
         Wire.endTransmission();
-        return false;
+        return true;
     }
     else{
-        return true;
+        return false;
     }
 }
 
@@ -91,7 +91,7 @@ int MCP4018::getWiperPercent()
     Wire.endTransmission();
     Wire.requestFrom(MCP_ADDRESS, 1);
     uint8_t value = Wire.read();
-    int resistance = MAX_RESISTANCE * value / 127 + WIPER_RESISTANCE;
+    int resistance = MAX_RESISTANCE * value / STEP_NUMBER + WIPER_RESISTANCE;
     int percent = resistance / MAX_RESISTANCE * 100;
 
     return percent;
@@ -104,7 +104,7 @@ int MCP4018::getWiperResistance()
     Wire.endTransmission();
     Wire.requestFrom(MCP_ADDRESS, 1);
     uint8_t value = Wire.read();
-    int resistance = MAX_RESISTANCE * value / 127 + WIPER_RESISTANCE;
+    int resistance = MAX_RESISTANCE * value / STEP_NUMBER + WIPER_RESISTANCE;
 
     return resistance;
 }
