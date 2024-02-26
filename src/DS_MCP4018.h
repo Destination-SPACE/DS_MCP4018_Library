@@ -31,4 +31,10 @@ class MCP4018
         uint8_t getWiperByte(void);
 };
 
+class MCP4018 {
+    public:
+        MCP4018();
+        virtual ~MCP4018(){};
+}
+
 #endif
