@@ -30,11 +30,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <Wire.h>
 #include <DS_MCP4018.h>
 
+MCP4018 MCP;
+
 void setup(){
   Serial.begin(115200);
   while(!Serial);
   Serial.print("MCP4018 test");
-  if(!MCP4018.begin()){
+  if(MCP.begin()){
+    Serial.print("\nMCP4018 could not be found...");
     while(true){
       delay(10);
     }
@@ -42,12 +45,12 @@ void setup(){
 }
 
 void loop(){
-  MCP4018.setWiperResistance(1000);
+  MCP.setWiperResistance(1000);
   delay(1000);
-  Serial.println(MCP4018.getWiperResistance());
+  Serial.println(MCP.getWiperResistance());
   delay(5000);
-  MCP4018.setWiperResistance(5000);
+  MCP.setWiperResistance(5000);
   delay(1000);
-  Serial.println(MCP4018.getWiperResistance());
+  Serial.println(MCP.getWiperResistance());
   delay(5000);
 }
