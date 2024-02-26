@@ -1,4 +1,4 @@
-#ifdef _DS_MCP4018_h
+#ifndef _DS_MCP4018_h
 #define _DS_MCP4018_h
 #include <Arduino.h>
 #include <Wire.h>
