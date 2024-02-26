@@ -1,6 +1,7 @@
 #ifndef _DS_MCP4018_h
 #define _DS_MCP4018_h
-#include <Arduino.h>
+
+#include "Arduino.h"
 #include <Wire.h>
 
 #define MCP_ADDRESS 0x2F        // Default I2C Address

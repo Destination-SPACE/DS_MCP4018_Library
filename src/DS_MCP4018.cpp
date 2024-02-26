@@ -1,4 +1,7 @@
+#include "Arduino.h"
+#include <Wire.h>
 #include "DS_MCP4018.h"
+
 
 MCP4018::MCP4018(void){}
 
