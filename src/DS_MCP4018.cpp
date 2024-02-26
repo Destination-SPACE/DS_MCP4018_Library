@@ -3,7 +3,7 @@
 #include "DS_MCP4018.h"
 
 
-MCP4018::MCP4018(){}
+MCP4018::MCP4018(void){}
 
 bool MCP4018::begin()
 {

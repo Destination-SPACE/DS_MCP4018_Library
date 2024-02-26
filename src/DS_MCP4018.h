@@ -17,6 +17,9 @@
 class MCP4018
 {
     public:
+        MCP4018();
+        virtual ~MCP4018(){};
+        
         bool begin(void);
         void reset(void);
 
@@ -30,11 +33,5 @@ class MCP4018
         int getWiperResistance(void);
         uint8_t getWiperByte(void);
 };
-
-class MCP4018 {
-    public:
-        MCP4018();
-        virtual ~MCP4018(){};
-}
 
 #endif
