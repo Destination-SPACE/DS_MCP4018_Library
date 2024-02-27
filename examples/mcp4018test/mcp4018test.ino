@@ -36,22 +36,16 @@ void setup(){
   Serial.begin(115200);
   while(!Serial);
   Serial.print("MCP4018 test");
-  if(MCP.begin()){
+  if(!MCP.begin()){
     Serial.print("\nMCP4018 could not be found...");
     while(true){
       delay(10);
     }
   }
-  Serial.print("\n");
+  MCP.reset();
+  MCP.setWiperResistance(5000);
 }
 
 void loop(){
-  MCP.setWiperResistance(1000);
-  delay(1000);
-  Serial.println(MCP.getWiperResistance());
-  delay(5000);
-  MCP.setWiperResistance(5000);
-  delay(1000);
-  Serial.println(MCP.getWiperResistance());
-  delay(5000);
+  
 }

@@ -86,10 +86,10 @@ void MCP4018::setWiperMax()
 //Get Values
 int MCP4018::getWiperPercent()
 {
-    Wire.beginTransmission(MCP_ADDRESS);
-    Wire.write(MCP_READ);
-    Wire.endTransmission();
     Wire.requestFrom(MCP_ADDRESS, 1);
+    if(!Wire.available()){
+        return -1;
+    }
     uint8_t value = Wire.read();
     int resistance = MAX_RESISTANCE * value / STEP_NUMBER + WIPER_RESISTANCE;
     int percent = resistance / MAX_RESISTANCE * 100;
@@ -99,10 +99,10 @@ int MCP4018::getWiperPercent()
 
 int MCP4018::getWiperResistance()
 {
-    Wire.beginTransmission(MCP_ADDRESS);
-    Wire.write(MCP_READ);
-    Wire.endTransmission();
     Wire.requestFrom(MCP_ADDRESS, 1);
+    if(!Wire.available()){
+        return -1;
+    }
     uint8_t value = Wire.read();
     int resistance = MAX_RESISTANCE * value / STEP_NUMBER + WIPER_RESISTANCE;
 
@@ -111,10 +111,10 @@ int MCP4018::getWiperResistance()
 
 uint8_t MCP4018::getWiperByte()
 {
-    Wire.beginTransmission(MCP_ADDRESS);
-    Wire.write(MCP_READ);
-    Wire.endTransmission();
     Wire.requestFrom(MCP_ADDRESS, 1);
+    if(!Wire.available()){
+        return -1;
+    }
     uint8_t value = Wire.read();
     
     return value;
