@@ -5,7 +5,7 @@
 
 MCP4018::MCP4018(void){}
 
-bool MCP4018::begin()
+bool MCP4018::begin(void)
 {
     Wire.begin();
     delay(100);
@@ -24,7 +24,7 @@ bool MCP4018::begin()
     }
 }
 
-void MCP4018::reset()
+void MCP4018::reset(void)
 {
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(0xFF);
@@ -65,7 +65,7 @@ void MCP4018::setWiperByte(uint8_t value)
     delay(10);
 }
 
-void MCP4018::setWiperZero()
+void MCP4018::setWiperZero(void)
 {
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(MCP_WRITE);
@@ -74,7 +74,7 @@ void MCP4018::setWiperZero()
     delay(10);
 }
 
-void MCP4018::setWiperMax()
+void MCP4018::setWiperMax(void)
 {
     Wire.beginTransmission(MCP_ADDRESS);
     Wire.write(MCP_WRITE);
@@ -84,7 +84,7 @@ void MCP4018::setWiperMax()
 }
 
 //Get Values
-int MCP4018::getWiperPercent()
+int MCP4018::getWiperPercent(void)
 {
     Wire.requestFrom(MCP_ADDRESS, 1);
     if(!Wire.available()){
@@ -97,7 +97,7 @@ int MCP4018::getWiperPercent()
     return percent;
 }
 
-int MCP4018::getWiperResistance()
+int MCP4018::getWiperResistance(void)
 {
     Wire.requestFrom(MCP_ADDRESS, 1);
     if(!Wire.available()){
@@ -109,7 +109,7 @@ int MCP4018::getWiperResistance()
     return resistance;
 }
 
-uint8_t MCP4018::getWiperByte()
+uint8_t MCP4018::getWiperByte(void)
 {
     Wire.requestFrom(MCP_ADDRESS, 1);
     if(!Wire.available()){
